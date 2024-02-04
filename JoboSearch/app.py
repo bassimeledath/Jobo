@@ -39,40 +39,59 @@ def load_resume_query_engine(collection_name):
     return query_engine
 
 # Display retrivals
-def display_retrival(retrival):
+def display_retrival(retrival, scored=False):
     metadata = retrival.metadata
-    st.markdown(
-        f'<a href="{metadata["job_url"]}" target="_blank" style="display: block; padding: 10px; border: 1px solid #ccc; margin: 10px 0; border-radius: 5px; text-decoration: none; color: white;">'
-        f'<strong>{metadata["title"]}</strong><br> at {metadata["company"]}'
-        '</a>',
-        unsafe_allow_html=True
-    )
+    loc = " - " + metadata["location"] if metadata["location"] else ""
+    job_type = " - " + metadata["job_type"] if metadata["job_type"] else ""
+
+    if scored:
+        score = "    " + str(round(retrival.score * 100)) + "% match"
+        card_html = (
+            f'<a href="{metadata["job_url"]}" target="_blank" style="display: block; padding: 10px; border: 1px solid #ccc; margin: 10px 0; border-radius: 5px; text-decoration: none; color: white;">'
+            f'<strong>{metadata["title"]}</strong><span style="color: #00ff00;">&nbsp;&nbsp;&nbsp;{score}</span>'
+            f'<br> at <span style="color: #a57fc0;">{metadata["company"]} {loc} {job_type}</span>'
+            '</a>'
+        )
+    else:
+        card_html = (
+            f'<a href="{metadata["job_url"]}" target="_blank" style="display: block; padding: 10px; border: 1px solid #ccc; margin: 10px 0; border-radius: 5px; text-decoration: none; color: white;">'
+            f'<strong>{metadata["title"]}</strong>'
+            f'<br> at <span style="color: #a57fc0;">{metadata["company"]} {loc} {job_type}</span>'
+            '</a>'
+        )
+
+    st.markdown(card_html, unsafe_allow_html=True)
+
 
 # Set up Streamlit app
 def main():
-    st.header("JoboSearch Engine")
+
+    st.image("logo.png")
 
     # Initialize the state of app, so Jobo only responses after User has inputted something
     st.session_state.role = ["jobo"]
 
     # Load job index retriever
-    jobs_retriever = load_jobs_retriever(similarity_top_k=3)
+    jobs_retriever = load_jobs_retriever(similarity_top_k=5)
+
+    # Load resume index
+    resume_query_engine = load_resume_query_engine("bassim_resume")
+    resume_response = resume_query_engine.query(
+        "Summarize this person's education, work experiences, and skills in less than 100 words."
+        ).response
 
     # User input: PDF file upload
     # For demo, always run this
-    if uploaded_file := st.file_uploader("Upload a PDF resume", type=["pdf"]) or False:
+    if uploaded_file := st.file_uploader("Upload a PDF resume", type=["pdf"]):
         # Produce a summary of the resume and a query engine for the resume information if available
         # parsed_documents = llamaparse_text_from_pdf(uploaded_file)
         # resume_query_engine = create_resume_query_engine(parsed_documents, "jobo_resume")
-        resume_query_engine = load_resume_query_engine("bassim_resume")
-        resume_summary = resume_query_engine.query(
-            "Summarize this person's education, work experiences, and skills in less than 100 words."
-            ).response
+        resume_summary = resume_response
     else:
         resume_summary = None
 
     # User input: Keywords
-    if keywords := st.text_input("Enter job search keywords:"):
+    if keywords := st.text_input("Enter job search query:"):
         if resume_summary:
             retrivals = jobs_retriever.retrieve(keywords + " jobs that are good matches for a person with these qualifications: " + resume_summary)
         else:
@@ -86,8 +105,10 @@ def main():
             st.write("No results")
         else:
             for ret in retrivals:
-                st.write(ret)
-                display_retrival(ret)
+                # st.write(ret) # for debugging
+                display_retrival(ret, resume_summary is not None)
+
+    st.image("power.png")
 
 if __name__ == "__main__":
     main()
