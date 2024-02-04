@@ -1,0 +1,44 @@
+Bassim Eledath
+Email | LinkedIn | GitHub | Website | Google Scholar | 919-360-6903 | San Francisco, CA
+Data scientist with over 5 years of experience, specializing in predictive modeling, machine learning and A/B testing
+EducationMaster of Science in Data Science July 2023 – June 2024
+University of San Francisco San Francisco, CA
+Bachelor of Science, Statistics Aug 2016 – Aug 2020
+Duke University Durham, NC
+Professional Experience
+Machine Learning Engineer (Graduate internship) Oct 2023 – Present
+Square Inc San Francisco, Remote
+● Increased average net profit per merchant by 80% compared to the baseline with own novel model to rank prospective merchants.
+Senior Data Science Consultant March 2022 – Feb 2023
+Andela New York, Remote
+● Led the churn prediction initiative, developed and productionized a model surpassing baseline with 65% ROC-AUC.
+● Created "The Experimentation Blueprint", a thorough guide used by all teams to design A/B tests at Andela.
+● Conducted biweekly mentorship for junior data science teams on contractor price and job-talent prediction projects.
+● Founded and led the data science team book club specializing in MLOps.
+Statistician/Data Scientist June 2020 – Oct 2022
+Target RWE (Formerly NoviSci) Durham, NC
+● Co-authored causalRisk R package for causal inference, adopted by firms like Janssen and Amgen for observational studies.
+● Ideated and co-developed Jira Quick Picture, a web app that reduced work log time by 75%.
+● Developed SanCheck R package for efficient automated sanity checking on large datasets.
+● Headed company book club on machine learning in healthcare.
+Freelance Data Science Consultant May 2020 – Jan 2022
+Upwork Remote
+● Awarded Top 10% Data Scientist status on Upwork; collaborated with 9 companies. Link to all testimonials.
+● Enhanced a multichain optometrist clinic's no-show prediction model, achieving >50% accuracy improvement.
+● Automated a crop yield visualization workflow in Python for an agro-chemical firm, reducing weekly hours spent by 90%.
+● Developed a 75% accurate submission prediction model for a global entertainment company's script writing competition.
+Data Science Instructor Nov 2020 – Feb 2021
+Coursera Remote
+● Sole instructor and content creator for the course “Exploratory Data Analysis With Python and Pandas.” - Link.
+● Course has a 4.5/5 rating and has been completed by 12,000+ learners.
+Applied Machine Learning Intensive June 2019 – Aug 2019
+Google Atlanta, GA
+● Selected as one of 18 participants from 600+ applicants for Google's fully funded 10-week machine learning program.
+Data Science CompetitionsTopCoder.com
+● 1600 score rating - top 10% of all competitors. 9 top 5 finishes (3 first) in 11 data science competitions - Link to profile.
+Other Competitions
+● Wells Fargo Campus Analytics Challenge Winner (2018), Duke datathon finalist (2019), Data+ datathon finalist (2019), P&G CEO
+analytics challenge USA finalist (2019), Citadel Summer Invitational Datathon Semi-finalist (2019).
+Certifications and Technical Skills● Google Cloud Certified - Professional Machine Learning Engineer (issued Sep 2023)
+● Skills: Python (Pandas, NumPy, Scikit-learn, Matplotlib), R, PostgreSQL, Google Cloud, AWS, Git/GitHub, Docker, JIRA
+.

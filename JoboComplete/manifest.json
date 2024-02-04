@@ -1,0 +1,33 @@
+{
+    "manifest_version": 3,
+    "name": "Autofill Extension",
+    "version": "1.0",
+    "permissions": [
+        "activeTab",
+        "scripting"
+    ],
+    "action": {
+        "default_popup": "frontend/popup.html"
+    },
+    "background": {
+        "service_worker": "frontend/background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "frontend/content.js"
+            ]
+        }
+    ],
+    "host_permissions": [
+        "<all_urls>",
+        "http://localhost:8000/"
+    ],
+    "icons": {
+        "16": "jobo.png",
+        "48": "jobo.png"
+    }
+}

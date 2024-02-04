@@ -1,0 +1,9 @@
+Name: Bassim Faizal Eledath
+Email: bassimfaizal@gmail.com
+Phone: 9193606903
+Current Company: Square
+Linkedin URL: https://www.linkedin.com/in/bassimfaizal/
+Github URL: https://github.com/bassimeledath
+Portfolio URL: https://www.bassimeledath.com/projects.html
+
+I have experience in ML and NLP

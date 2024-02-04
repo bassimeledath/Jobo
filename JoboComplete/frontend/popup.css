@@ -1,0 +1,42 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 10px;
+    color: #333;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+.autofill-btn {
+    background-color: #3f51b5;
+    /* Shade of Indigo */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    margin: 10px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.autofill-btn:hover {
+    background-color: #283593;
+    /* Darker Indigo */
+}
+
+.status-message {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #e8eaf6;
+    /* Light Indigo */
+    border-radius: 4px;
+    color: #1a237e;
+    /* Deep Indigo */
+    font-size: 14px;
+}
